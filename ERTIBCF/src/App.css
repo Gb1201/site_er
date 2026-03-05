@@ -1,0 +1,918 @@
+/* ============================================
+   VARIÁVEIS DE COR E TEMA
+   ============================================ */
+
+:root {
+  --primary-dark: #1a3a5c;
+  --primary-blue: #2d5f8a;
+  --accent-gold: #d4a745;
+  --accent-light: #f9f6f1;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --border-color: #e8e4df;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(250, 248, 248, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* ============================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   NAVBAR - CABEÇALHO
+   ============================================ */
+
+.navbar-custom {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  box-shadow: var(--shadow-md);
+  padding: 1rem 0;
+  border-bottom: 3px solid var(--accent-gold);
+}
+
+.navbar-custom .container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.brand-icon {
+  font-size: 2rem;
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.nav-links .nav-link {
+  color: var(--text-light) !important;
+  margin-left: 2rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border-color: var(--accent-gold);
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  position: relative;
+  overflow: hidden;
+  color: var(--text-light);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(212, 167, 69, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  animation: fade-in-down 0.8s ease;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fade-in-up 0.8s ease 0.2s both;
+}
+
+.cta-button {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 167, 69, 0.3);
+  letter-spacing: 0.5px;
+  animation: fade-in-up 0.8s ease 0.4s both;
+}
+
+.cta-button:hover {
+  background: #e6b850;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 167, 69, 0.4);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="white"></path></svg>');
+  background-repeat: repeat-x;
+  background-size: 600px 120px;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/* ============================================
+   SEÇÕES GERAIS
+   ============================================ */
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--primary-blue));
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   SEÇÃO SOBRE
+   ============================================ */
+
+.section-about {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, var(--accent-light) 100%);
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.about-text strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* ============================================
+   CAROUSEL
+   ============================================ */
+
+.carousel-custom {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.carousel-image {
+  height: 350px;
+  object-fit: cover;
+  filter: brightness(1.02);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* ============================================
+   SEÇÃO NOSSA IGREJA
+   ============================================ */
+
+.section-church {
+  padding: 5rem 0;
+  background: #fcf9f9;
+}
+
+.church-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--primary-dark) !important;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+/* CARDS DE PASTORES */
+
+.pastor-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  height: 100%;
+}
+
+.pastor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-gold);
+}
+
+.pastor-image-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pastor-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(45, 95, 138, 0.3);
+  transition: all 0.3s ease;
+  border: 3px solid var(--accent-gold);
+}
+
+.pastor-card:hover .pastor-image {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(212, 167, 69, 0.4);
+}
+
+.pastor-initials {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.pastor-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.pastor-role {
+  color: var(--accent-gold);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SEÇÃO HISTÓRIA
+   ============================================ */
+
+.section-history {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, var(--accent-light) 0%, #ffffff 100%);
+}
+
+.history-card {
+  background: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  border-left: 5px solid var(--accent-gold);
+  transition: all 0.3s ease;
+}
+
+.history-card:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.history-content h3 {
+  color: var(--primary-dark);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.history-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-dark) !important;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+.history-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   SEÇÃO DIRETORIA
+   ============================================ */
+
+.section-directory {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+/* CARDS DE DIRETORES */
+
+.director-card {
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-light) 100%);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  height: 100%;
+}
+
+.director-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-gold);
+}
+
+.director-image-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.director-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(212, 167, 69, 0.3);
+  transition: all 0.3s ease;
+  border: 3px solid var(--primary-dark);
+}
+
+.director-card:hover .director-image {
+  transform: scale(1.15);
+  box-shadow: 0 8px 25px rgba(212, 167, 69, 0.5);
+}
+
+.director-initials {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.director-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.director-role {
+  color: var(--accent-gold);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   SEÇÃO CONTATO
+   ============================================ */
+
+.section-contact {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, var(--accent-light) 0%, #ffffff 100%);
+}
+
+/* BOTÕES DE CONTATO */
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  color: white;
+  text-align: center;
+}
+
+.whatsapp-button {
+  background: linear-gradient(135deg, #25d366 0%, #20ba5f 100%);
+  border: 2px solid transparent;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.email-button {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+  border: 2px solid transparent;
+}
+
+.email-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(45, 95, 138, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* FORMULÁRIO DE CONTATO */
+
+.contact-form-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  border-top: 4px solid var(--accent-gold);
+}
+
+.contact-form-wrapper h3 {
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.form-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(212, 167, 69, 0.1);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(44, 62, 80, 0.5);
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, var(--accent-gold), #e6b850);
+  color: var(--primary-dark);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #e6b850, #d4a745);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 167, 69, 0.3);
+  color: var(--primary-dark);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer-section {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  color: var(--text-light);
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--accent-gold);
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+  margin-left: 5px;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+.border-top {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 992px) {
+  .nav-links .nav-link {
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links .nav-link::after {
+    display: none;
+  }
+
+  .section-about,
+  .section-church,
+  .section-history,
+  .section-directory,
+  .section-contact {
+    padding: 3rem 0;
+  }
+
+  .carousel-image {
+    height: 280px;
+  }
+
+  .pastor-card,
+  .director-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .contact-button {
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-text,
+  .church-text {
+    text-align: left;
+  }
+
+  .history-content p,
+  .history-content h3 {
+    text-align: left;
+  }
+
+  .carousel-image {
+    height: 200px;
+  }
+
+  .pastor-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pastor-initials {
+    font-size: 1.8rem;
+  }
+
+  .director-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .director-initials {
+    font-size: 1.4rem;
+  }
+
+  .history-card {
+    border-left-width: 4px;
+    padding: 2rem;
+  }
+
+  .history-card:hover {
+    transform: translateX(4px);
+  }
+
+  .footer-section {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-logo {
+    font-size: 1.2rem;
+  }
+
+  .brand-icon {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding-top: 4rem;
+  }
+
+  .hero-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 0;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .title-underline {
+    width: 60px;
+  }
+
+  .pastor-card,
+  .director-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .pastor-name {
+    font-size: 1.1rem;
+  }
+
+  .director-name {
+    font-size: 1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.2rem;
+  }
+
+  .contact-form-wrapper h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .history-card {
+    padding: 1.5rem;
+    border-left-width: 3px;
+  }
+
+  .history-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .history-content p {
+    font-size: 1rem;
+  }
+
+  .footer-section {
+    padding-top: 1.5rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  .footer-text,
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================
+   CLASSE PARA SUPORTE A DARK MODE (OPCIONAL)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-light: #1a2332;
+  }
+
+  body {
+    background-color: #0f1419;
+  }
+
+  .about-text,
+  .church-text,
+  .history-content p {
+    color: #e8e4df;
+  }
+
+  .contact-form-wrapper {
+    background: #1a2332;
+  }
+
+  .form-input {
+    background: #262f3b;
+    border-color: #3a4556;
+    color: #e8e4df;
+  }
+
+  .pastor-card,
+  .director-card {
+    background: #1a2332;
+  }
+}
