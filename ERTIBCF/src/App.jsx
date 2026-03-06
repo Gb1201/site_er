@@ -3,6 +3,18 @@ import { Container, Row, Col, Navbar, Nav, Carousel, Form, Button } from 'react-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Menu, MessageCircle, Mail, Phone } from 'lucide-react';
+import samuel from './images/Samuel.png'
+import davi from  './images/Davi.jpeg'
+import yasser from  './images/Yasser.jpeg'
+import miguel from  './images/Miguel.jpeg'
+import pedroPaulo from  './images/Pedro.jpeg'
+import pedroAbrantes from  './images/PedroAbrantes.jpeg'
+import kelvyn from  './images/Kelvyn.jpeg'
+import lucas from  './images/Lucas.jpeg'
+import lima from  './images/Lima.jpeg'
+import rubim from  './images/Rubim.jpeg'
+import nelson from  './images/Nelson.jpeg'
+import rodolfo from  './images/Rodolfo.jpeg'
 
 export default function App() {
   const aboutRef = useRef(null);
@@ -19,14 +31,30 @@ export default function App() {
   const pastors = [
     {
       id: 1,
-      name: 'Pastor Eliseu',
+      name: 'Pastor Tiago Lima',
       role: 'Pastor Presidente',
-      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+      image: lima
     },
     {
       id: 2,
-      name: 'Pastor Carlos',
-      role: 'Pastor Vice-Presidente',
+      name: 'Pastor Tiago Rubim',
+      image: rubim
+    },
+    {
+      id: 3,
+      name: 'Pastor Rodolfo',
+      role: 'Pastor dos Jovens e Adolescentes',
+      image: rodolfo
+    },
+    {
+      id: 4,
+      name: 'Pastor Nelson',
+      image: nelson
+    },
+    {
+      id: 5,
+      name: 'Pastor Edson Xavier',
+      role: 'Pastor dos Casais',
       image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
     }
   ];
@@ -35,39 +63,51 @@ export default function App() {
   const directors = [
     {
       id: 1,
-      name: 'João Silva',
-      role: 'Diretor de Louvor',
-      image: 'https://images.unsplash.com/photo?w=150&h=150&fit=crop&blur=100'
+      name: 'Samuel Moraes',
+      role: 'Embaixador Chefe',
+      image: samuel
     },
     {
       id: 2,
-      name: 'Maria Santos',
-      role: 'Diretora de Visitação',
-      image: 'https://images.unsplash.com/photo?w=150&h=150&fit=crop&blur=100'
+      name: 'Davi Talon',
+      role: 'Embaixador Assistente',
+      image: davi
     },
     {
       id: 3,
-      name: 'Pedro Oliveira',
-      role: 'Diretor de Ações Sociais',
-      image: 'https://images.unsplash.com/photo?w=150&h=150&fit=crop&blur=100'
+      name: 'Yasser Salleh',
+      role: 'Intendente',
+      image: yasser
     },
     {
       id: 4,
-      name: 'Ana Costa',
-      role: 'Diretora de Estudos Bíblicos',
-      image: 'https://images.unsplash.com/photo?w=150&h=150&fit=crop&blur=100'
+      name: 'Miguel Talon',
+      role: 'Secretário',
+      image: miguel
     },
     {
       id: 5,
-      name: 'Lucas Ferreira',
-      role: 'Diretor de Eventos',
-      image: 'https://images.unsplash.com/photo?w=150&h=150&fit=crop&blur=100'
+      name: 'Pedro Abrantes',
+      role: 'Secretário',
+      image: pedroAbrantes
     },
     {
       id: 6,
-      name: 'Beatriz Gomes',
-      role: 'Diretora Secretária',
-      image: 'https://images.unsplash.com/photo?w=150&h=150&fit=crop&blur=100'
+      name: 'Pedro Paulo',
+      role: 'Porta-Voz',
+      image: pedroPaulo
+    },
+    {
+      id: 7,
+      name: 'Kelvyn Ribeiro',
+      role: 'Cônsul Alvin Hatton',
+      image: kelvyn
+    },
+    {
+      id: 8,
+      name: 'Lucas Batista',
+      role: 'Cônsul Luther King',
+      image: lucas
     }
   ];
 
@@ -109,7 +149,7 @@ export default function App() {
                 <div className="hero-icon animate-fade-in">👑</div>
                 <h1 className="hero-title">Embaixadores do Rei</h1>
                 <p className="hero-subtitle">
-                  Servindo Cristo com fidelidade, amor e dedicação
+                  Uma vez embaixador, sempre embaixador do Rei!
                 </p>
                 <button 
                   className="cta-button"
@@ -137,18 +177,9 @@ export default function App() {
           <Row className="g-4 align-items-center">
             <Col lg={6}>
               <p className="about-text">
-                Os <strong>Embaixadores do Rei</strong> é uma organização missionária dedicada ao serviço de Cristo 
-                e ao bem-estar da comunidade. Nós acreditamos que a verdadeira fé se manifesta através de ações 
-                concretas de amor ao próximo.
+                Os <strong>Embaixadores do Rei</strong> das igrejas batistas, dedicada ao desenvolvimento espiritual, moral e social de meninos de 9 a 17 anos. Buscamos ensinar os meninos a serem verdadeiros representantes de Jesus aqui na Terra. Baseamo-nos em 5 ideias: Oração, Missões, Mordomia, Serviço Real e Estudo da Bíblia. Possuímos várias atividades, como estudo bíblico, evangelismo, práticas esportivas e acampamentos.
               </p>
-              <p className="about-text">
-                Nossa missão é promover o evangelho de Jesus Cristo através de projetos sociais, visitação fraternal, 
-                estudos bíblicos e eventos que fortaleçam a comunidade cristã e testemunhem o amor de Deus.
-              </p>
-              <p className="about-text">
-                Cada membro é um embaixador, representando o Reino de Deus através da excelência, 
-                dedicação e compromisso com os princípios cristãos.
-              </p>
+              
             </Col>
             <Col lg={6}>
               <Carousel className="carousel-custom">
@@ -180,13 +211,13 @@ export default function App() {
           <Row className="mb-5">
             <Col lg={10} className="mx-auto">
               <p className="church-text">
-                Nossa Igreja é fundada em Cristo, a Rocha inabalável. Somos uma comunidade de fé que se reúne 
-                para louvar a Deus, estudar Sua Palavra e servir ao próximo com integridade e amor. 
-                Acreditamos em um Deus vivo, amoroso e presente em nossas vidas.
+                A Terceira Igreja Batista em Cabo Frio não é apenas um templo, mas sim uma comunidade de fé de pessoas imperfeitas em busca da perfeição em Cristo Jesus. Uma história viva, um marco de fé nesta cidade tão especial.
               </p>
               <p className="church-text">
-                Os pastores que lideram nossa congregação dedicam suas vidas ao pastoreio fiel, 
-                procurando sempre o bem-estar espiritual de cada membro.
+                Cada culto, cada oração, cada lágrima e cada sorriso constroem uma trajetória marcada por vitórias,  milagres, restauração de famílias e esperança renovada.
+              </p>
+              <p className="church-text">
+                Nossa igreja cresce junto com Cabo Frio, servindo a cidade, acolhendo pessoas e sendo luz em tempos de alegria e também de dificuldades.
               </p>
             </Col>
           </Row>
@@ -199,12 +230,28 @@ export default function App() {
                     <div 
                       className="pastor-image"
                       style={{
-                        background: `linear-gradient(135deg, #1a3a5c 0%, #2d5f8a 100%)`
+                        background: `linear-gradient(135deg, #1a3a5c 0%, #2d5f8a 100%)`,
+                        overflow: 'hidden',
+                        borderRadius: '50%'
                       }}
                     >
-                      <span className="pastor-initials">
-                        {pastor.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                      {pastor.image && typeof pastor.image === 'string' && pastor.image.startsWith('http') ? (
+                        <img 
+                          src={pastor.image} 
+                          alt={pastor.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      ) : pastor.image ? (
+                        <img 
+                          src={pastor.image} 
+                          alt={pastor.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      ) : (
+                        <span className="pastor-initials">
+                          {pastor.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <h4 className="pastor-name">{pastor.name}</h4>
@@ -272,17 +319,33 @@ export default function App() {
               <Col key={director.id} md={6} lg={4} className="text-center">
                 <div className="director-card">
                   <div className="director-image-wrapper">
-                    <div 
-                      className="director-image"
-                      style={{
-                        background: `linear-gradient(135deg, #c4942b 0%, #d4a745 100%)`
-                      }}
-                    >
-                      <span className="director-initials">
-                        {director.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                      <div 
+                        className="director-image"
+                        style={{
+                          background: `linear-gradient(135deg, #c4942b 0%, #d4a745 100%)`,
+                          overflow: 'hidden',
+                          borderRadius: '50%'
+                        }}
+                      >
+                        {director.image && typeof director.image === 'string' && director.image.startsWith('http') ? (
+                          <img 
+                            src={director.image} 
+                            alt={director.name}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                          />
+                        ) : director.image ? (
+                          <img 
+                            src={director.image} 
+                            alt={director.name}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                          />
+                        ) : (
+                          <span className="director-initials">
+                            {director.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
                   <h4 className="director-name">{director.name}</h4>
                   <p className="director-role">{director.role}</p>
                 </div>
@@ -308,7 +371,7 @@ export default function App() {
           <Row className="g-4 mb-5">
             <Col md={6}>
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://wa.me/5522992673561" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="contact-button whatsapp-button"
@@ -319,7 +382,7 @@ export default function App() {
             </Col>
             <Col md={6}>
               <a 
-                href="mailto:contato@embaixadoresdorei.com"
+                href="mailto:er.tibcf@gmail.com"
                 className="contact-button email-button"
               >
                 <Mail size={24} />
@@ -376,9 +439,15 @@ export default function App() {
         <Container>
           <Row className="py-4">
             <Col lg={4} className="mb-4">
-              <h5 className="footer-title">Embaixadores do Rei</h5>
+              <h5 className="footer-title">Data de Reunião e Horário</h5>
               <p className="footer-text">
-                Servindo Cristo com fidelidade, amor e dedicação à comunidade.
+                Toda Quarta às 19h
+              </p>
+            </Col>
+            <Col lg={4} className="mb-4">
+              <h5 className="footer-title">Endereço</h5>
+              <p className="footer-text">
+                Av. Adolfo Beranger Júnior, 221 - Jardim Nautilus, Cabo Frio - RJ, 28909-030
               </p>
             </Col>
             <Col lg={4} className="mb-4">
@@ -393,8 +462,8 @@ export default function App() {
             <Col lg={4} className="mb-4">
               <h5 className="footer-title">Contato</h5>
               <p className="footer-text">
-                <strong>Email:</strong> contato@embaixadoresdorei.com<br />
-                <strong>WhatsApp:</strong> (11) 99999-9999
+                <strong>Email:</strong> er.tibcf@gmail.com<br />
+                <strong>WhatsApp:</strong> (22) 99267-3561
               </p>
             </Col>
           </Row>
