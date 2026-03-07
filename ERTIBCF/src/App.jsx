@@ -3,6 +3,7 @@ import { Container, Row, Col, Navbar, Nav, Carousel, Form, Button } from 'react-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Menu, MessageCircle, Mail, Phone } from 'lucide-react';
+import er from './images/er.png'
 import samuel from './images/Samuel.png'
 import davi from  './images/Davi.jpeg'
 import yasser from  './images/Yasser.jpeg'
@@ -15,6 +16,14 @@ import lima from  './images/Lima.jpeg'
 import rubim from  './images/Rubim.jpeg'
 import nelson from  './images/Nelson.jpeg'
 import rodolfo from  './images/Rodolfo.jpeg'
+import img1 from './images/Img1.jpeg'
+import img2 from './images/Img2.jpeg'
+import img3 from './images/Img3.jpeg'
+import img4 from './images/Img4.jpeg'
+import img5 from './images/Img5.jpeg'
+import img6 from './images/Img6.jpeg'
+import img7 from './images/Img7.jpeg'
+import edvan from './images/Edvan.jpeg'
 
 export default function App() {
   const aboutRef = useRef(null);
@@ -53,9 +62,9 @@ export default function App() {
     },
     {
       id: 5,
-      name: 'Pastor Edson Xavier',
+      name: 'Pastor Edvan Xavier',
       role: 'Pastor dos Casais',
-      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+      image: edvan
     }
   ];
 
@@ -108,14 +117,36 @@ export default function App() {
       name: 'Lucas Batista',
       role: 'Cônsul Luther King',
       image: lucas
+    },
+    {
+      id: 9,
+      name: 'Milton Julio',
+      role: 'Conselheiro',
+      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+    },
+    {
+      id: 10,
+      name: 'Marcelo Adami',
+      role: 'Conselheiro',
+      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+    },
+    {
+      id: 11,
+      name: 'Ricardo Abrantes',
+      role: 'Conselheiro',
+      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
     }
   ];
 
   // Imagens do carrossel
   const carouselImages = [
-    'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1511429035069-717cdc657a25?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=500&fit=crop'
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7
   ];
 
   return (
@@ -124,8 +155,13 @@ export default function App() {
       <Navbar sticky="top" className="navbar-custom" expand="lg">
         <Container>
           <Navbar.Brand className="brand-logo" href="#home">
-            <span className="brand-icon">👑</span>
-            <span>Embaixada Pastor Ednezer Faria</span>
+            <img 
+              src={er} 
+              alt="Logo Embaixadores do Rei"
+              className="brand-icon-image"
+              style={{ width: '40px', height: '40px', marginRight: '10px' }}
+            />
+            <span>Embaixada Pastor Ednézer Faria</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -146,7 +182,12 @@ export default function App() {
           <Row className="align-items-center justify-content-center min-vh-100">
             <Col lg={8} className="text-center">
               <div className="hero-content">
-                <div className="hero-icon animate-fade-in">👑</div>
+                <img 
+                  src={er} 
+                  alt="Logo Embaixadores do Rei"
+                  className="hero-icon-image animate-fade-in"
+                  style={{ width: '150px', height: '150px', marginBottom: '20px' }}
+                />
                 <h1 className="hero-title">Embaixadores do Rei</h1>
                 <p className="hero-subtitle">
                   Uma vez embaixador, sempre embaixador do Rei!
