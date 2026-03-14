@@ -24,6 +24,8 @@ import img5 from './images/Img5.jpeg'
 import img6 from './images/Img6.jpeg'
 import img7 from './images/Img7.jpeg'
 import edvan from './images/Edvan.jpeg'
+import marcelo from './images/Marcelo.jpeg'
+import ricardo from './images/Ricardo.jpeg'
 
 export default function App() {
   const aboutRef = useRef(null);
@@ -128,13 +130,13 @@ export default function App() {
       id: 10,
       name: 'Marcelo Adami',
       role: 'Conselheiro',
-      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+      image: marcelo
     },
     {
       id: 11,
       name: 'Ricardo Abrantes',
       role: 'Conselheiro',
-      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+      image: ricardo
     }
   ];
 
@@ -304,37 +306,100 @@ export default function App() {
         </Container>
       </section>
 
-      {/* SEÇÃO NOSSA HISTÓRIA */}
+      {/* SEÇÃO NOSSA HISTÓRIA - TIMELINE */}
       <section id="nossa-historia" ref={historyRef} className="section-history">
         <Container className="py-5">
           <Row className="mb-5">
             <Col lg={8} className="mx-auto text-center">
               <h2 className="section-title">Nossa História</h2>
               <div className="title-underline"></div>
+              <p className="section-description">
+                A história da Embaixada na Terceira Igreja Batista em Cabo Frio é uma bela história, a qual passa por diversas pessoas e gerações.
+                Em nossa igreja, decidiu-se em 1986, em assembleia, pelo retorno das atividades da Sociedade de Homens Missionários o que foi bastante relevante e proporcionou a organização da primeira Embaixada da igreja que no tempo tinha 5 anos.
+              </p>
             </Col>
           </Row>
 
           <Row>
             <Col lg={10} className="mx-auto">
-              <div className="history-card">
-                <div className="history-content">
-                  <h3>Uma Jornada de Fé e Serviço</h3>
-                  <p>
-                    Os Embaixadores do Rei nasceram de um sonho compartilhado: criar um espaço onde jovens 
-                    e adultos pudessem unir fé e ação prática. Desde nossa fundação, temos trabalhado 
-                    incansavelmente para levar o evangelho através de projetos sociais, visitação fraternal 
-                    e apoio à comunidade.
-                  </p>
-                  <p>
-                    Nossa história é marcada por muitos testemunhos de transformação, vidas tocadas pela 
-                    graça de Deus, famílias restauradas e comunidades fortalecidas. Cada ação, cada 
-                    encontro, cada oração é um capítulo na história maior da obra de Deus em nossas vidas.
-                  </p>
-                  <p>
-                    Hoje, continuamos caminhando com esperança e determinação, sabendo que o Rei Jesus 
-                    está no controle de nossas vidas e da história. Convidamos você a fazer parte dessa 
-                    jornada extraordinária de fé, serviço e transformação.
-                  </p>
+              <div className="timeline">
+                {/* PERÍODO 1: 1986-1994 */}
+                <div className="timeline-item">
+                  <div className="timeline-marker">
+                    <div className="timeline-dot"></div>
+                  </div>
+                  <div className="timeline-content">
+                    <div className="timeline-header">
+                      <h3 className="timeline-title">O Início e a Fundação</h3>
+                      <span className="timeline-year">1986 – 1994</span>
+                    </div>
+                    <div className="timeline-body">
+                      <p>
+                        Após a posse do Pr. Jânio Cosendey Nunes em 1986, foi organizada a primeira Embaixada, 
+                        que inicialmente levou seu nome.
+                      </p>
+                      <div className="timeline-details">
+                        <h4>Primeiros Conselheiros:</h4>
+                        <p>Jorge Manoel Sabino e Flaviano de Souza Cruz</p>
+                        
+                        <h4>Marco Regional:</h4>
+                        <p>Em 1987, participamos da criação do FORTE (Frente de Operação Regional)</p>
+                        
+                        <h4>Destaques:</h4>
+                        <p>Atuação do Chanceler Robson Lima Campos e diversos conselheiros como Carlos Berlindo, Oziel Freitas e Hélio Dias</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* PERÍODO 2: 2003-2014 */}
+                <div className="timeline-item">
+                  <div className="timeline-marker">
+                    <div className="timeline-dot"></div>
+                  </div>
+                  <div className="timeline-content">
+                    <div className="timeline-header">
+                      <h3 className="timeline-title">Reorganização e Expansão</h3>
+                      <span className="timeline-year">2003 – 2014</span>
+                    </div>
+                    <div className="timeline-body">
+                      <p>
+                        Após um período de espera, o trabalho foi retomado em 2003 com o curso de conselheiro 
+                        do irmão Romildo Barbosa da Silva Junior.
+                      </p>
+                      <div className="timeline-details">
+                        <h4>Novo Nome:</h4>
+                        <p>Em 26 de junho de 2004, a organização passou a se chamar <strong>Embaixada Pr. Ednezer Farias</strong></p>
+                        
+                        <h4>Colaboradores:</h4>
+                        <p>Uma nova geração somou forças, incluindo Widson Sabino, Pr. Tiago Rubim, Mike Abdala e muitos outros que mantiveram a chama acesa até 2014</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* PERÍODO 3: 2019-Presente */}
+                <div className="timeline-item">
+                  <div className="timeline-marker">
+                    <div className="timeline-dot timeline-dot-current"></div>
+                  </div>
+                  <div className="timeline-content">
+                    <div className="timeline-header">
+                      <h3 className="timeline-title">A Nova Fagulha</h3>
+                      <span className="timeline-year">2019 – Presente</span>
+                    </div>
+                    <div className="timeline-body">
+                      <p>
+                        Em 2019, o conselheiro Deivison Mendonça Monteiro iniciou um movimento de revitalização 
+                        junto à liderança da igreja.
+                      </p>
+                      <div className="timeline-details">
+                        <h4>Fase Atual:</h4>
+                        <p>Desde 2022, os conselheiros Milton Júlio, Marcelo e Ricardo assumiram o trabalho com afinco, 
+                        garantindo que novos meninos continuem ouvindo a mensagem do Evangelho</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Col>
