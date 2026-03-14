@@ -26,6 +26,7 @@ import img7 from './images/Img7.jpeg'
 import edvan from './images/Edvan.jpeg'
 import marcelo from './images/Marcelo.jpeg'
 import ricardo from './images/Ricardo.jpeg'
+import milton from './images/Milton.jpeg'
 
 export default function App() {
   const aboutRef = useRef(null);
@@ -124,7 +125,7 @@ export default function App() {
       id: 9,
       name: 'Milton Julio',
       role: 'Conselheiro',
-      image: 'https://images.unsplash.com/photo?w=200&h=200&fit=crop&blur=100'
+      image: milton
     },
     {
       id: 10,
@@ -501,39 +502,56 @@ export default function App() {
             <Col lg={8} className="mx-auto">
               <div className="contact-form-wrapper">
                 <h3>Formulário de Contato</h3>
-                <Form className="contact-form">
+                <form
+                  action="https://formsubmit.co/er.tibcf@gmail.com"
+                  method="POST"
+                  className="contact-form"
+                >
+                  {/* Configurações do FormSubmit */}
+                  <input type="hidden" name="_subject" value="Nova mensagem - Embaixadores do Rei" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  {/*<input type="hidden" name="_next" value="https://embaixadores-do-rei.vercel.app" />*/}
+                  
+
                   <Form.Group className="mb-3">
                     <Form.Label>Nome Completo</Form.Label>
                     <Form.Control 
-                      type="text" 
+                      type="text"
+                      name="nome"
                       placeholder="Digite seu nome"
                       className="form-input"
+                      required
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
                     <Form.Label>Email</Form.Label>
                     <Form.Control 
-                      type="email" 
+                      type="email"
+                      name="email"
                       placeholder="seu.email@exemplo.com"
                       className="form-input"
+                      required
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
                     <Form.Label>Mensagem</Form.Label>
                     <Form.Control 
-                      as="textarea" 
+                      as="textarea"
+                      name="mensagem"
                       rows={5}
                       placeholder="Digite sua mensagem aqui..."
                       className="form-input"
+                      required
                     />
                   </Form.Group>
 
                   <Button className="btn-submit" type="submit">
                     Enviar Mensagem
                   </Button>
-                </Form>
+                </form>
               </div>
             </Col>
           </Row>
@@ -576,7 +594,10 @@ export default function App() {
           <Row>
             <Col className="text-center border-top pt-4">
               <p className="footer-copyright">
-                © 2024 Embaixadores do Rei. Todos os direitos reservados.
+                © 2026 Embaixadores do Rei. Todos os direitos reservados.
+              </p>
+              <p className="footer-copyright">
+                Desenvolvido pelo Gabriel Santos.
               </p>
             </Col>
           </Row>
