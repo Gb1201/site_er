@@ -1123,3 +1123,17 @@ body {
     background: #1a2332;
   }
 }
+
+/* FIX MOBILE OVERFLOW */
+html {
+  overflow-x: hidden;
+}
+
+.navbar-custom .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.brand-logo span {
+  font-size: clamp(0.8rem, 3.5vw, 1.5rem);
+}
