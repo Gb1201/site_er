@@ -28,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
 }
 
 body {
@@ -49,8 +50,8 @@ body {
 }
 
 .navbar-custom .container {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .brand-logo {
@@ -63,6 +64,10 @@ body {
   letter-spacing: 0.5px;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.brand-logo span {
+  font-size: clamp(0.8rem, 3.5vw, 1.5rem);
 }
 
 .brand-icon {
@@ -218,7 +223,7 @@ body {
 
 .section-description {
   font-size: 1.1rem;
-  color: var(--text-light) !important;
+  color: var(--primary-dark) !important;
   opacity: 0.8;
   margin-top: 1rem;
 }
@@ -229,7 +234,7 @@ body {
 
 .section-about {
   padding: 5rem 0;
-  background: linear-gradient(180deg, #ffffff 0%, var(--accent-light) 100%);
+  background: linear-gradient(180deg, white 0%, var(--accent-light) 100%);
 }
 
 .about-text {
@@ -273,7 +278,7 @@ body {
 
 .section-church {
   padding: 5rem 0;
-  background: #fcf9f9;
+  background: #ffffff;
 }
 
 .church-text {
@@ -467,7 +472,7 @@ body {
 }
 
 .timeline-title {
-  color: var(--text-light);
+  color: var(--primary-dark);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
@@ -485,7 +490,7 @@ body {
 
 /* CORPO DA TIMELINE */
 .timeline-body {
-  color: var(--text-light);
+  color: var(--primary-dark);
   line-height: 1.8;
 }
 
@@ -520,7 +525,7 @@ body {
 }
 
 .timeline-details p {
-  color: var(--text-light);
+  color: var(--primary-dark);
   margin: 0 0 1rem 0;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -1084,56 +1089,4 @@ body {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
   }
-}
-
-/* ============================================
-   CLASSE PARA SUPORTE A DARK MODE (OPCIONAL)
-   ============================================ */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent-light: #1a2332;
-  }
-
-  body {
-    background-color: #0f1419;
-  }
-
-  .about-text,
-  .church-text {
-    color: #e8e4df;
-  }
-
-  .contact-form-wrapper {
-    background: #1a2332;
-  }
-
-  .form-input {
-    background: #262f3b;
-    border-color: #3a4556;
-    color: #e8e4df;
-  }
-
-  .pastor-card,
-  .director-card {
-    background: #1a2332;
-  }
-
-  .timeline-content {
-    background: #1a2332;
-  }
-}
-
-/* FIX MOBILE OVERFLOW */
-html {
-  overflow-x: hidden;
-}
-
-.navbar-custom .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.brand-logo span {
-  font-size: clamp(0.8rem, 3.5vw, 1.5rem);
 }
